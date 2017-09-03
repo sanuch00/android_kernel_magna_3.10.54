@@ -10,10 +10,11 @@ int soc_antibanding;	// 0 => 60hz , 1 => 50hz
 //s_add new sensor driver here
 //export funtions
 UINT32 IMX219_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
+UINT32 OV8858_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 HI544_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
+UINT32 HI191MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 IMX119_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT * pfFunc);
 UINT32 HI707_YUV_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
-UINT32 OV8858_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 OV8858S_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc); //                                                                     
 UINT32 OV5670_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc); //                                                                  
 UINT32 IMX132_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
@@ -83,7 +84,6 @@ UINT32 SP0A19_YUV_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 GC0313MIPI_YUV_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 IMX091_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 IMX219_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
-UINT32 HI191MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 IMX135_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 OV16825MIPISensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 GC2235SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
@@ -117,14 +117,17 @@ ACDK_KD_SENSOR_INIT_FUNCTION_STRUCT kdSensorList[MAX_NUM_OF_SUPPORT_SENSOR+1] =
 #if defined(OV8858_MIPI_RAW)
     {OV8858_SENSOR_ID, SENSOR_DRVNAME_OV8858_MIPI_RAW, OV8858_MIPI_RAW_SensorInit},
 #endif
+    #if defined(HI544_MIPI_RAW)
+    {HI544MIPI_SENSOR_ID, SENSOR_DRVNAME_HI544_MIPI_RAW, HI544_MIPI_RAW_SensorInit},
+#endif
+    #if defined(HI191_MIPI_RAW)
+    {HI191MIPI_SENSOR_ID, SENSOR_DRVNAME_HI191_MIPI_RAW, HI191MIPI_RAW_SensorInit},
+#endif
 //                                                                       
 #if defined(OV8858S_MIPI_RAW)
     {OV8858S_SENSOR_ID, SENSOR_DRVNAME_OV8858S_MIPI_RAW, OV8858S_MIPI_RAW_SensorInit},
 #endif
 //                                                                       
-#if defined(HI544_MIPI_RAW)
-    {HI544MIPI_SENSOR_ID, SENSOR_DRVNAME_HI544_MIPI_RAW, HI544_MIPI_RAW_SensorInit},
-#endif
 //                                                                    
 #if defined(OV5670_MIPI_RAW)
     {OV5670_SENSOR_ID, SENSOR_DRVNAME_OV5670_MIPI_RAW, OV5670_MIPI_RAW_SensorInit},
@@ -132,9 +135,6 @@ ACDK_KD_SENSOR_INIT_FUNCTION_STRUCT kdSensorList[MAX_NUM_OF_SUPPORT_SENSOR+1] =
 //                                                                    
 #if defined(IMX119_MIPI_RAW)
     {IMX119_SENSOR_ID, SENSOR_DRVNAME_IMX119_MIPI_RAW, IMX119_MIPI_RAW_SensorInit},
-#endif
-#if defined(HI191_MIPI_RAW)
-    {HI191MIPI_SENSOR_ID, SENSOR_DRVNAME_HI191_MIPI_RAW, HI191MIPI_RAW_SensorInit},
 #endif
 #if defined(HI707_YUV)
     {HI707_SENSOR_ID, SENSOR_DRVNAME_HI707_YUV, HI707_YUV_SensorInit},
