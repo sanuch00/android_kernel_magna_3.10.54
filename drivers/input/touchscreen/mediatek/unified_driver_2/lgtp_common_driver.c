@@ -30,13 +30,8 @@
 * Manifest Constants / Defines
 ****************************************************************************/
 #define LGE_TOUCH_NAME "lge_touch"
-/*******************************************
-XCORE TO_DO
 
- 1)Clean up unneded stuff.
- 2)lpwg_status not changing value
 
-*******************************************/
 /****************************************************************************
  * Macros
  ****************************************************************************/
@@ -47,7 +42,7 @@ XCORE TO_DO
 ****************************************************************************/
 enum
 {
-	UEVENT_KNOCK_ON = 0,
+	UEVENT_KNOCK_ON = 1,
 	UEVENT_KNOCK_CODE,
 	UEVENT_SIGNATURE,
 #if defined(ENABLE_SWIPE_MODE)

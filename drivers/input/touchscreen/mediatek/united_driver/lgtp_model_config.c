@@ -176,7 +176,7 @@ int TouchGetModelConfig(struct lge_touch_data *pDriverData)
 		pConfig->protocol_type = MT_PROTOCOL_B;
 
 		#if defined(TARGET_MT6582_Y70) || defined(TARGET_MT6582_P1S3G)
-		strcpy(pConfig->fw_image,"synaptics/y70/PLG456-V1.02-PR1741017_DS5.2.12.0.1013_40047182.img");
+		strcpy(pConfig->fw_image,"synaptics/y70/PLG455-V1.22-PR1815058-DS5.2.12.0.1013_40047196.img");
 		#elif defined(TARGET_MT6582_Y90)
 		strcpy(pConfig->fw_image,"synaptics/y90/PLG465-V1.11-PR1815155-DS5.2.12.0.13-4005018B.img");
 											    

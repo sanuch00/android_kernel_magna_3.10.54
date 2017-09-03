@@ -58,7 +58,7 @@ obj-y   +=  synaptics_2200/
 endif
 
 ifeq ($(CONFIG_JDI_INCELL),y)
-obj-y	+=  united_driver/
+obj-y	+=  unified_driver_2/
 endif
 
 ifeq ($(CONFIG_MTK_S3320),y)
